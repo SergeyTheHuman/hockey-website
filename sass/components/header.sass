@@ -1,0 +1,280 @@
+.ice-small
+	display: none
+	@media screen and ( max-width: 1023.98px )
+		display: block
+.ice-large
+	@media screen and ( max-width: 1023.98px )
+		display: none
+
+.header
+	width: 100%
+	min-height: 1200px
+	@include adaptiveProp('min-height', 1200, 674, 1920, 1024)
+	@include adaptiveProp('min-height', 674, 520, 1024, 319)
+	background: url('@img/header/background.png') center top / cover no-repeat
+	display: flex
+	flex-direction: column
+	justify-content: flex-start
+	align-items: center
+	position: relative
+	@include adaptiveProp('background-size', 1920, 1280, 1920, 1024)
+	&::after
+		content: ''
+		position: absolute
+		width: 597px
+		height: 625px
+		bottom: 0
+		left: 0
+		background: url('@img/header/squares.png') bottom left / cover no-repeat
+		z-index: -1
+		@include adaptiveProp('background-size', 625, 180, 1920, 1024)
+		@include adaptiveProp('bottom', 0, -60, 1024, 319)
+		@include adaptiveProp('left', 0, -40, 1024, 319)
+		@include adaptiveProp('background-size', 180, 120, 1024, 319)
+		@media screen and ( max-width: 1024px )
+			width: 120px
+			height: 130px
+	&__top
+		padding: 2rem
+		@include adaptiveProp('padding', 40, 20, 1920, 319)
+		width: 100%
+		display: flex
+		justify-content: space-between
+		align-items: center
+		position: relative
+		&-ice,
+		&-number
+			overflow: hidden
+		&-ice a,
+		&-number a
+			@include font('Druk Cyr', 1.6rem, 500)
+			font-size: 1.6rem
+			@include adaptiveProp('font-size', 32, 18, 1920, 319)
+			font-style: italic
+			line-height: 1.28em
+			letter-spacing: 0.156em
+			text-transform: uppercase
+			color: $color-white
+			text-decoration: none
+			transition: $transition
+			position: relative
+			&::after
+				content: ''
+				position: absolute
+				bottom: 0
+				left: 0
+				width: 100%
+				height: 2px
+				transition: $transition
+				background-color: $color-white
+				transform: translateX(-120%)
+			&:hover
+				color: $color-red
+				&::after
+					background-color: $color-red
+					transform: translateX(0)
+			@media screen and ( max-width: 475px )
+				letter-spacing: 0.1em
+		&-burger
+			cursor: pointer
+			height: 3rem
+			width: 3rem
+			position: absolute
+			left: 50%
+			transform: translateX(-50%)
+			@include adaptiveProp('width', 60, 40, 1920, 319)
+			@include adaptiveProp('height', 60, 40, 1920, 319)
+			&.active
+				&::after
+					transform: rotate(-45deg) translateY(-50%) translateX(-50%)
+				&::before
+					transform: rotate(45deg) translateY(50%) translateX(-50%)
+			&::after,
+			&::before
+				content: ''
+				position: absolute
+				width: 3rem
+				height: 4px
+				@include adaptiveProp('width', 60, 40, 1920, 319)
+				@include adaptiveProp('height', 4, 2, 1920, 319)
+				background: $color-white
+				left: 50%
+				transition: $transition
+				transform-origin: center left
+			&::after
+				top: 50%
+				transform: translateY(100%) translateX(-50%)
+			&::before
+				bottom: 50%
+				transform: translateY(-100%) translateX(-50%)
+	&__logo
+		position: relative
+		z-index: 2
+		width: 266px
+		margin-top: 3rem
+		@include adaptiveProp('width', 266, 144, 1920, 1024)
+		@include adaptiveProp('width', 144, 100, 1024, 319)
+		@include adaptiveProp('margin-top', 60, 40, 1920, 1024)
+		@include adaptiveProp('margin-top', 40, 40, 1024, 319)
+		&-img
+			width: 100%
+	&__text
+		margin-top: 4.5rem
+		@include adaptiveProp('margin-top', 90, 40, 1920, 319)
+		display: flex
+		align-items: flex-start
+		@media screen and ( max-width: 1024px )
+			flex-direction: column
+			align-items: center
+			justify-content: center
+		&-title
+			@include adaptiveProp('font-size', 96, 56, 1920, 1024)
+			@include adaptiveProp('font-size', 56, 42, 1024, 319)
+			margin: 0 0.33em
+			&_small
+				@include font('Druk Cyr', 1.6rem, 500)
+				@include adaptiveProp('font-size', 32, 22, 1920, 1024)
+				@include adaptiveProp('font-size', 22, 22, 1024, 319)
+				font-style: italic
+				line-height: 1.1875em
+				letter-spacing: 0.156em
+				text-transform: uppercase
+				color: #FFFFFF
+				padding-top: 1rem
+				@media screen and ( max-width: 1024px )
+					padding-top: 0
+	&__address
+		line-height: 1.4rem
+		text-align: center
+		font-size: 1rem
+		margin-top: 16rem
+		@include adaptiveProp('font-size', 20, 12, 1920, 319)
+		@include adaptiveProp('margin-top', 320, 120, 1920, 319)
+
+.burger
+	&__menu
+		margin-right: 0
+		position: fixed
+		left: 0
+		top: 0
+		// width: calc(100% + 16px)
+		width: 100%
+		height: 100%
+		overflow-y: auto
+		background-color: $color-blue
+		transition: 0.7s all ease
+		transform: translateY(-200%)
+		opacity: 0.5
+		&.opened
+			opacity: 1
+			transform: translateY(0)
+			// .header__logo,
+			// .header__text,
+			// .header__address
+			// 	opacity: 0
+
+	&__content
+		width: 100%
+		height: 100%
+		margin-top: 310px
+		@include adaptiveProp('margin-top', 310, 230, 1920, 1024)
+		@include adaptiveProp('margin-top', 230, 160, 1024, 319)
+		display: flex
+		flex-direction: column
+	&__nav
+		list-style: none
+		text-align: center
+		&-li
+			margin: 0 2rem
+			padding: 2rem 0
+			overflow: hidden
+			@include adaptiveProp('padding-top', 40, 20, 1920, 319)
+			@include adaptiveProp('padding-bottom', 40, 20, 1920, 319)
+			&:not(:last-child)
+				border-bottom: 1px solid $color-black
+		&-a
+			@include adaptiveProp('font-size', 96, 56, 1920, 1024)
+			@include adaptiveProp('font-size', 56, 42, 1024, 319)
+			text-decoration: none
+			display: inline
+			transition: $transition
+			overflow: hidden
+			position: relative
+			&::after,
+			&::before
+				content: ''
+				position: absolute
+				width: 100%
+				height: 2px
+				transition: $transition
+				background-color: $color-white
+				opacity: 0
+				bottom: 0
+			&::after
+				left: 0
+				transform: translateX(-200%)
+			&::before
+				right: 0
+				transform: translateX(200%)
+			&:hover
+				color: $color-red
+				&::after,
+				&::before
+					opacity: 1
+					background-color: $color-red
+					transform: translateX(0)
+	&__footer
+		padding: 4rem 0
+		@include adaptiveProp('padding-top', 80, 20, 1920, 319)
+		@include adaptiveProp('padding-bottom', 80, 20, 1920, 319)
+		&-wrapper
+			display: grid
+			grid-template-columns: 1fr 120px 1fr
+			@media screen and ( max-width: 1024px )
+				display: flex
+				justify-content: center
+				align-items: center
+				flex-direction: column
+				text-align: center
+				gap: 2rem
+	&__contacts-a
+		text-decoration: none
+		color: $color-white
+		transition: $transition
+		position: relative
+		&:hover
+			color: $color-red
+		&:not(:first-child)
+			padding-left: 0.35rem
+		&:not(:last-child)
+			padding-right: 0.35rem
+			border-right: 1px solid $color-white
+	&__contacts
+		position: relative
+		text-align: right
+		&::after
+			content: ''
+			position: absolute
+			background-color: $color-white
+			width: 2px
+			height: 100%
+			top: 0
+			left: calc(100% + 59px)
+			transform: translateX(-50%)
+			@media screen and ( max-width: 1024px )
+				top: unset
+				width: 35px
+				height: 2px
+				bottom: -20px
+				left: 50%
+				transform: translateX(-50%)
+	&__address
+		text-align: left
+		grid-column: 3/4
+	&__contacts,
+	&__address
+		@include adaptiveProp('font-size', 20, 12, 1920, 319)
+		@include adaptiveProp('line-height', 28, 16, 1920, 319)
+		color: $color-white
+		@media screen and ( max-width: 1024px )
+			text-align: center

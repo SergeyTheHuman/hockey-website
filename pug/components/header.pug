@@ -1,0 +1,30 @@
+header.header 
+	.header__top 
+		.burger__menu
+			.burger__content
+				nav.burger__nav 
+					each li in ['Мы','Возможности','Преимущества','Галерея','События','Отзывы','Контакты',]
+						li.burger__nav-li
+							a.burger__nav-a.title(href="#")= li
+				.burger__footer
+					.burger__footer-wrapper
+						.burger__footer-contacts.burger__contacts
+							.burger__contacts-text  Мы в соцсетях:
+							.burger__contacts-links 
+								each link in ['VK', 'OK', 'Telegram']
+									a.burger__contacts-a(href="#")= link
+						.burger__footer-address.burger__address Москва, #[br]Волоколамское шоссе, д.88
+		.header__top-burger
+		.header__top-ice.ice-small
+			a(href='#') Бронь льда
+		.header__top-ice.ice-large
+			a(href='#') Забронировать лед
+		.header__top-number 
+			a(href='tel:84956020232') 8 495 602 02 32
+	.header__logo
+		img.header__logo-img(src='@img/header/logo.png')
+	.header__text
+		span.header__text-title_small новый
+		h1.header__text-title.title Ледовый комплекс  
+		span.header__text-title_small в москве
+	.header__address Москва,#[br]Волоколамское шоссе, д.88
