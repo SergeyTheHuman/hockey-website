@@ -8,10 +8,10 @@
 
 .header
 	width: 100%
-	// min-height: 1200px
-	// @include adaptiveProp('min-height', 1200, 674, 1920, 1024)
-	// @include adaptiveProp('min-height', 674, 520, 1024, 319)
-	background: url('@img/header/background.png') center top / cover no-repeat
+	background-image: url('@img/header/background.png')
+	background-position: center top
+	background-size: cover
+	background-repeat: no-repeat
 	display: flex
 	flex-direction: column
 	justify-content: flex-start
@@ -26,7 +26,10 @@
 		height: 625px
 		bottom: 0
 		left: 0
-		background: url('@img/header/squares.png') bottom left / contain no-repeat
+		background-image: url('@img/header/squares.png')
+		background-position: bottom left
+		background-size: contain
+		background-repeat: no-repeat
 		z-index: -1
 		margin-top: -15rem
 		@include adaptiveProp('margin-top', -300, -120, 1920, 1024)
@@ -152,4 +155,3 @@
 		@include adaptiveProp('margin-top', 320, 120, 1920, 319)
 		@include adaptiveProp('margin-top', 320, 208, 1920, 1024)
 		@include adaptiveProp('margin-top', 158, 120, 1024, 319)
-

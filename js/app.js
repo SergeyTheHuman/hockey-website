@@ -1,5 +1,6 @@
 import { isWebp } from './components/isWebp.js'
-
+import Swiper from 'swiper/bundle'
+console.log(Swiper)
 isWebp()
 
 const $burgerButtons = document.querySelectorAll('.header__top-burger')
@@ -28,4 +29,18 @@ $burgerButtons.forEach((btn) => {
 			$html.classList.add('no-scroll')
 		}
 	})
+})
+
+const swiper = new Swiper('.request__swiper', {
+	slidesPerView: 1.1,
+	spaceBetween: 10,
+	navigation: {
+		nextEl: '.request__swiper-next',
+		prevEl: '.request__swiper-prev',
+	},
+	breakpoints: {
+		768: {
+			slidesPerView: 1.3,
+		},
+	},
 })

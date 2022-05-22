@@ -1,6 +1,19 @@
+-
+	const images = [
+		'slide-1.jpg',
+		'slide-2.jpg',
+		'slide-3.jpg',
+		'slide-4.jpg',
+	]
+
 section.request
 	.request__content
 		.request__content-title Мы предлагаем ледовую площадку для тренировок по хоккею и занятий фигурным катанием
 		button.request__content-button.button оставить заявку
-	.request__swiper 
-		p asdasd
+	.request__swiper.swiper
+		.request__swiper-wrapper.swiper-wrapper 
+			each img in images
+				.request__swiper-slide.swiper-slide 
+					img(src= `@img/request/${img}`, alt="photo")
+		.request__swiper-prev.swiper-button-prev
+		.request__swiper-next.swiper-button-next
