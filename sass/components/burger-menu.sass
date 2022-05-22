@@ -1,0 +1,139 @@
+.burger
+	&__header
+		padding: 2rem
+		@include adaptiveProp('padding', 40, 20, 1920, 319)
+		width: 100%
+		display: flex
+		justify-content: space-between
+		align-items: center
+		position: relative
+	&__menu
+		-ms-overflow-style: none
+		scrollbar-width: none
+		overflow-y: auto
+		position: fixed
+		left: 0
+		right: 0
+		top: 0
+		width: 100%
+		height: 100%
+		background-color: $color-blue
+		transition: 0.7s all ease
+		transform: translateY(-200%)
+		opacity: 0.5
+		&::-webkit-scrollbar
+			display: none
+		&>.header__logo
+			display: flex
+			justify-self: center
+			&-wrapper
+				width: 100%
+				display: flex
+				justify-content: center
+		&.opened
+			opacity: 1
+			transform: translateY(0)
+	&__content
+		width: 100%
+		height: 100%
+		margin-top: 40px
+		@include adaptiveProp('margin-top', 40, 20, 1920, 319)
+		display: flex
+		flex-direction: column
+	&__nav
+		list-style: none
+		text-align: center
+		&-li
+			margin: 0 2rem
+			padding: 2rem 0
+			overflow: hidden
+			@include adaptiveProp('padding-top', 40, 20, 1920, 319)
+			@include adaptiveProp('padding-bottom', 40, 20, 1920, 319)
+			&:not(:last-child)
+				border-bottom: 1px solid $color-black
+		&-a
+			@include adaptiveProp('font-size', 96, 56, 1920, 1024)
+			@include adaptiveProp('font-size', 56, 42, 1024, 319)
+			text-decoration: none
+			display: inline
+			transition: $transition
+			overflow: hidden
+			position: relative
+			&::after,
+			&::before
+				content: ''
+				position: absolute
+				width: 100%
+				height: 2px
+				transition: $transition
+				background-color: $color-white
+				opacity: 0
+				bottom: 0
+			&::after
+				left: 0
+				transform: translateX(-200%)
+			&::before
+				right: 0
+				transform: translateX(200%)
+			&:hover
+				color: $color-red
+				&::after,
+				&::before
+					opacity: 1
+					background-color: $color-red
+					transform: translateX(0)
+	&__footer
+		padding: 4rem 0
+		@include adaptiveProp('padding-top', 80, 20, 1920, 319)
+		@include adaptiveProp('padding-bottom', 80, 20, 1920, 319)
+		&-wrapper
+			display: grid
+			grid-template-columns: 1fr 120px 1fr
+			@media screen and ( max-width: 1024px )
+				display: flex
+				justify-content: center
+				align-items: center
+				flex-direction: column
+				text-align: center
+				gap: 2rem
+	&__contacts-a
+		text-decoration: none
+		color: $color-white
+		transition: $transition
+		position: relative
+		&:hover
+			color: $color-red
+		&:not(:first-child)
+			padding-left: 0.35rem
+		&:not(:last-child)
+			padding-right: 0.35rem
+			border-right: 1px solid $color-white
+	&__contacts
+		position: relative
+		text-align: right
+		&::after
+			content: ''
+			position: absolute
+			background-color: $color-white
+			width: 2px
+			height: 100%
+			top: 0
+			left: calc(100% + 59px)
+			transform: translateX(-50%)
+			@media screen and ( max-width: 1024px )
+				top: unset
+				width: 35px
+				height: 2px
+				bottom: -20px
+				left: 50%
+				transform: translateX(-50%)
+	&__address
+		text-align: left
+		grid-column: 3/4
+	&__contacts,
+	&__address
+		@include adaptiveProp('font-size', 20, 12, 1920, 319)
+		@include adaptiveProp('line-height', 28, 16, 1920, 319)
+		color: $color-white
+		@media screen and ( max-width: 1024px )
+			text-align: center

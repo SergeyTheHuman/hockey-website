@@ -35,6 +35,18 @@ body.no-scroll
 	line-height: 1.27em
 	letter-spacing: .177em
 	text-transform: uppercase
-	color: #FFFFFF
+	color: $color-white
 	@media screen and ( max-width: 1024px )
 		letter-spacing: 0.1em
+
+.button
+	@include font('Bebas Neue', 1.1rem, 400)
+	@include adaptiveProp('font-size', 22, 18, 1920, 1024)
+	@include adaptiveProp('font-size', 18, 16, 1024, 319)
+	line-height: 1em
+	letter-spacing: 0.227em
+	text-transform: uppercase
+	color: $color-white
+	padding: 0.9em 1.36em
+	background: $color-blue
+	border: none
