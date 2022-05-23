@@ -1,0 +1,76 @@
+-
+	const cardsLeft = [
+		{
+			image: 'itemLeft-1.jpg',
+			alt: 'ice',
+			title: 'Лед',
+			text: 'Размер поля 26х56. Поверхность генерируется холодильным оборудованием "Название", а в основании охлаждаемая бетонная плита, что создает гладкий, ровный лед с необходимой температурой и влажностью.',
+		},
+		{
+			image: 'itemLeft-2.jpg',
+			alt: 'light',
+			title: 'Cвет',
+			text: 'В зале установлено светодиодное оборудование для равномерного и комфортного освещения ледовой поверхности.',
+		},
+		{
+			image: 'itemLeft-3.jpg',
+			alt: 'dressing room',
+			title: 'Раздевалки',
+			text: 'Раздевалки оборудованы санузлами, душевыми кабинами, приточной вентиляцией и зарядками мобильных устройств для каждого игрока.',
+		},
+		{
+			image: 'itemLeft-4.jpg',
+			alt: 'spa',
+			title: 'зона спа',
+			text: 'СПА, бассейн и баня удобно расположены внутри комплекса.',
+		},
+	]
+	const cardsRight = [
+		{
+			image: 'itemRight-1.jpg',
+			alt: 'hall',
+			title: 'зал',
+			text: 'Зал высотой 12,5 м оборудован высокотехнологичной приточно-вытяжной системой вентиляции и осушения воздуха. Она поддерживает температуру и влажность воздуха, а также предотвращает образования тумана. ',
+		},
+		{
+			image: 'itemRight-2.jpg',
+			alt: 'sound',
+			title: 'Звук',
+			text: 'Для комфорта игроков во время занятий и зрителей мероприятий установлено электронное табло и светомузыкальное оборудование. ',
+		},
+		{
+			image: 'itemRight-3.jpg',
+			alt: 'gym',
+			title: 'тренажерный зал',
+			text: 'Комплекс оборудован тренажерным залом  с боксерскими грушами',
+		},
+	]
+section.hockey-grid
+	.hockey-grid__wrapper
+		.hockey-grid__left
+			each card in cardsLeft
+				.hockey-grid__item
+					.hockey-grid__image 
+						img(src= `@img/hockey-grid/${card.image}`, alt= `${card.alt}`)
+					.hockey-grid__content
+						.hockey-grid__title.title= `${card.title}`
+						.hockey-grid__text.text= `${card.text}` 
+		.hockey-grid__right
+			each card in cardsRight
+				.hockey-grid__item
+					.hockey-grid__image 
+						img(src= `@img/hockey-grid/${card.image}`, alt= `${card.alt}`)
+					.hockey-grid__content
+						.hockey-grid__title.title= `${card.title}`
+						.hockey-grid__text.text= `${card.text}` 
+		.hockey__swiper.swiper.my-swiper
+			.hockey__swiper-wrapper.swiper-wrapper.my-swiper-wrapper
+				each card in [...cardsLeft, ...cardsRight]
+					.hockey-grid__slide.swiper-slide.my-swiper-slide
+						.hockey-grid__slide-image 
+							img(src= `@img/hockey-grid/${card.image}`, alt= `${card.alt}`)
+						.hockey-grid__slide-content
+							.hockey-grid__title.title= `${card.title}`
+							.hockey-grid__text.text= `${card.text}` 
+			.hockey__swiper-prev.swiper-button-prev.my-swiper-prev
+			.hockey__swiper-next.swiper-button-next.my-swiper-next

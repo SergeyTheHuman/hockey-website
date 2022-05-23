@@ -16,10 +16,10 @@ $transition: 0.3s all ease-in-out
 	box-sizing: border-box
 
 html
-	overflow-x: hidden
 	margin-right: calc(-1 * (100vw - 100%))
 body,
 html
+	overflow-x: hidden
 	height: 100%
 	font-size: $font-size
 	font-family: $font-family
@@ -36,8 +36,16 @@ body.no-scroll
 	letter-spacing: .177em
 	text-transform: uppercase
 	color: $color-white
+	@include adaptiveProp('font-size', 96, 56, 1920, 1024)
+	@include adaptiveProp('font-size', 56, 42, 1024, 319)
 	@media screen and ( max-width: 1024px )
 		letter-spacing: 0.1em
+
+.text
+	line-height: 1.4em
+	font-size: 1rem
+	@include adaptiveProp('font-size', 20, 14, 1920, 1024)
+	@include adaptiveProp('font-size', 14, 12, 1024, 319)
 
 .button
 	@include font('Bebas Neue', 1.1rem, 400)
@@ -50,3 +58,33 @@ body.no-scroll
 	padding: 0.9em 1.36em
 	background: $color-blue
 	border: none
+
+.my-swiper
+	width: 750px
+	height: 500px
+	@include adaptiveProp('width', 750, 390, 1920, 768)
+	@include adaptiveProp('height', 550, 308, 1920, 768)
+	@include adaptiveProp('height', 308, 236, 768, 319)
+	@media screen and ( max-width: 768px )
+		align-self: flex-start
+		width: 100%
+
+.my-swiper-prev,
+.my-swiper-next
+	transition: $transition
+	justify-content: flex-start
+	height: 20px
+	top: 100%
+	font-size: 0px
+	&::after
+		font-size: 0
+
+.my-swiper-prev
+	background: url('@img/request/Arrow-back.svg') center left / cover no-repeat
+	left: 1px
+	transform: translateY(-50%)
+
+.my-swiper-next
+	background: url('@img/request/Arrow-forward.svg') center right / cover no-repeat
+	right: unset
+	transform: translateY(-50%)

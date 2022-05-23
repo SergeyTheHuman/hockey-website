@@ -31,7 +31,7 @@ $burgerButtons.forEach((btn) => {
 	})
 })
 
-const swiper = new Swiper('.request__swiper', {
+const requestSwiper = new Swiper('.request__swiper', {
 	slidesPerView: 1.1,
 	spaceBetween: 10,
 	navigation: {
@@ -42,5 +42,14 @@ const swiper = new Swiper('.request__swiper', {
 		768: {
 			slidesPerView: 1.3,
 		},
+	},
+})
+
+const gridSwiper = new Swiper('.hockey__swiper', {
+	slidesPerView: 1.5,
+	spaceBetween: 20,
+	navigation: {
+		nextEl: '.hockey__swiper-next',
+		prevEl: '.hockey__swiper-prev',
 	},
 })

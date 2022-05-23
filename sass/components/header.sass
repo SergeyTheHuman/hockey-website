@@ -131,8 +131,6 @@
 			align-items: center
 			justify-content: center
 		&-title
-			@include adaptiveProp('font-size', 96, 56, 1920, 1024)
-			@include adaptiveProp('font-size', 56, 42, 1024, 319)
 			margin: 0 0.33em
 			&_small
 				@include font('Druk Cyr', 1.6rem, 500)
@@ -147,11 +145,8 @@
 				@media screen and ( max-width: 1024px )
 					padding-top: 0
 	&__address
-		line-height: 1.4rem
 		text-align: center
-		font-size: 1rem
 		margin-top: 16rem
-		@include adaptiveProp('font-size', 20, 12, 1920, 319)
 		@include adaptiveProp('margin-top', 320, 120, 1920, 319)
 		@include adaptiveProp('margin-top', 320, 208, 1920, 1024)
 		@include adaptiveProp('margin-top', 158, 120, 1024, 319)

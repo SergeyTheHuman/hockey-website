@@ -10,10 +10,10 @@ section.request
 	.request__content
 		.request__content-title Мы предлагаем ледовую площадку для тренировок по хоккею и занятий фигурным катанием
 		button.request__content-button.button оставить заявку
-	.request__swiper.swiper
-		.request__swiper-wrapper.swiper-wrapper 
+	.request__swiper.swiper.my-swiper
+		.request__swiper-wrapper.swiper-wrapper.my-swiper-wrapper
 			each img in images
-				.request__swiper-slide.swiper-slide 
+				.request__swiper-slide.swiper-slide.my-swiper-slide
 					img(src= `@img/request/${img}`, alt="photo")
-		.request__swiper-prev.swiper-button-prev
-		.request__swiper-next.swiper-button-next
+		.request__swiper-prev.swiper-button-prev.my-swiper-prev
+		.request__swiper-next.swiper-button-next.my-swiper-next
