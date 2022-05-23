@@ -45,12 +45,14 @@
 		gap: 1.25rem
 		@include adaptiveProp('gap', 25, 13, 1920, 319)
 	&__item
+		transition: $transition
 		display: flex
 		flex-direction: column
 		justify-content: space-between
 		padding: 1.5rem
 		width: 14.5rem
 		height: 14.5rem
+		color: $color-red
 		@include adaptiveProp('padding', 30, 20, 1920, 1024)
 		@include adaptiveProp('padding', 20, 15, 1024, 319)
 		@include adaptiveProp('height', 290, 185, 1920, 1024)
@@ -58,6 +60,13 @@
 		@include adaptiveProp('width', 290, 185, 1920, 1024)
 		@include adaptiveProp('width', 185, 130, 1024, 319)
 		background-color: $color-white
+		&:hover
+			background-color: $color-blue
+			color: $color-white
+			transform: scale(1.2)
+			.opportunities__item-svg
+				transition: $transition
+				fill: $color-white
 		&-subtitle
 			max-width: 80%
 			@include font('Druk Cyr', 1.6rem, 500 )
@@ -67,7 +76,7 @@
 			line-height: 1.1875em
 			letter-spacing: 0.13em
 			text-transform: uppercase
-			color: $color-red
+			color: inherit
 			align-self: flex-start
 		&-icon
 			align-self: flex-end
@@ -93,9 +102,6 @@
 		align-items: center
 		@media screen and ( max-width: 768px )
 			width: 100%
-		&-title
-
-		&-subtitle
 		&-button
 			margin-top: 2rem
 			@include adaptiveProp('margin-top', 40, 25, 1920, 319)
