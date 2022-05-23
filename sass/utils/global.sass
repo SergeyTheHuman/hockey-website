@@ -58,6 +58,31 @@ body.no-scroll
 	padding: 0.9em 1.36em
 	background: $color-blue
 	border: none
+	transition: 0.15s all ease
+	&:hover
+		border-radius: 5px
+	&:active
+		transform: translateY(5px)
+		box-shadow: 4px 4px 20px 0px rgba(0, 0, 0, 1) inset
+
+.title-small,
+.subtitle-small
+	font-style: italic
+	text-transform: uppercase
+
+.title-small
+	@include font('Druk Cyr', 2.8rem, 500)
+	line-height: 1.25em
+	letter-spacing: 0.142em
+	@include adaptiveProp('font-size', 56, 42, 1920, 1024)
+	@include adaptiveProp('font-size', 42, 36, 1024, 319)
+
+.subtitle-small
+	@include font('Druk Cyr', 1.6rem, 500)
+	line-height: 1.75em
+	letter-spacing: 0.125em
+	@include adaptiveProp('font-size', 32, 22, 1920, 1024)
+	@include adaptiveProp('font-size', 22, 18, 1024, 319)
 
 .my-swiper
 	width: 750px

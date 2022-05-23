@@ -1,0 +1,103 @@
+.opportunities
+	position: relative
+	width: 100%
+	height: 1300px
+	@include adaptiveProp('height', 1300, 840, 1920, 1024)
+	@include adaptiveProp('height', 840, 790, 1024, 319)
+	background-image: url('@img/opportunities/squares-bottom.png'), url('@img/opportunities/background.png'), url('@img/opportunities/squares-top.png')
+	background-size: 30vw, cover, 25vw
+	background-position: left bottom, center, right top
+	background-repeat: no-repeat, no-repeat, no-repeat
+	@media screen and ( max-width: 768px )
+		background-position: left 80%, center, right 60px
+	&__wrapper
+		height: 100%
+		width: 100%
+		padding: 0 10rem
+		@include adaptiveProp('padding-right', 200, 120, 1920, 1024)
+		@include adaptiveProp('padding-left', 200, 120, 1920, 1024)
+		@include adaptiveProp('padding-right', 120, 20, 1024, 319)
+		@include adaptiveProp('padding-left', 120, 20, 1024, 319)
+		display: flex
+		justify-content: center
+		align-items: center
+	&__content
+		width: 100%
+		height: 100%
+		display: flex
+		justify-content: space-between
+		align-items: center
+		@media screen and ( max-width: 1024px )
+			padding-bottom: 2rem
+			flex-direction: column
+			justify-content: center
+			gap: 2rem
+			@include adaptiveProp('gap', 40, 20, 1024, 319)
+		@media screen and ( max-width: 768px )
+			@include adaptiveProp('padding-bottom', 20, 100, 1024, 319)
+	&__title
+		color: $color-black
+	&__grid
+		align-self: center
+		display: grid
+		grid-template-columns: repeat(2, 1fr)
+		grid-auto-rows: 1fr
+		gap: 1.25rem
+		@include adaptiveProp('gap', 25, 13, 1920, 319)
+	&__item
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		padding: 1.5rem
+		width: 14.5rem
+		height: 14.5rem
+		@include adaptiveProp('padding', 30, 20, 1920, 1024)
+		@include adaptiveProp('padding', 20, 15, 1024, 319)
+		@include adaptiveProp('height', 290, 185, 1920, 1024)
+		@include adaptiveProp('height', 185, 130, 1024, 319)
+		@include adaptiveProp('width', 290, 185, 1920, 1024)
+		@include adaptiveProp('width', 185, 130, 1024, 319)
+		background-color: $color-white
+		&-subtitle
+			max-width: 80%
+			@include font('Druk Cyr', 1.6rem, 500 )
+			@include adaptiveProp('font-size', 32, 22, 1920, 1024)
+			@include adaptiveProp('font-size', 22, 18, 1024, 319)
+			font-style: italic
+			line-height: 1.1875em
+			letter-spacing: 0.13em
+			text-transform: uppercase
+			color: $color-red
+			align-self: flex-start
+		&-icon
+			align-self: flex-end
+			width: 108px
+			height: 108px
+			@include adaptiveProp('height', 108, 69, 1920, 1024)
+			@include adaptiveProp('height', 69, 50, 1024, 319)
+			@include adaptiveProp('width', 108, 69, 1920, 1024)
+			@include adaptiveProp('width', 69, 50, 1024, 319)
+		&-svg
+			width: 100%
+			height: 100%
+	&__booking
+		position: absolute
+		@include bg('@img/opportunities/background-booking.png', cover)
+		width: 60%
+		bottom: 0
+		left: 50%
+		transform: translateX(-50%)
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		@media screen and ( max-width: 768px )
+			width: 100%
+		&-title
+
+		&-subtitle
+		&-button
+			margin-top: 2rem
+			@include adaptiveProp('margin-top', 40, 25, 1920, 319)
+			&:hover
+				background-color: darken( $color-blue, 15 )

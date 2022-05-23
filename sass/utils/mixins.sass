@@ -16,3 +16,9 @@
 @mixin adaptiveProp($prop, $start_value, $end_value, $container, $min_width)
 	@media (max-width: #{$container + 0.2}px) and (min-width: #{$min_width + 0.8}px)
 		#{$prop}: calc(#{$end_value}px + (#{$start_value} - #{$end_value}) * ((100vw - #{$min_width}px) / (#{$container} - #{$min_width})))
+
+@mixin bg($url, $size, $position: 'center', $repeat: 'no-repeat')
+	background-image: url(#{$url})
+	background-size: #{$size}
+	background-position: #{$position}
+	background-repeat: #{$repeat}

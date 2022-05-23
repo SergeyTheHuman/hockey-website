@@ -1,0 +1,35 @@
+-
+	const items = [
+		{
+			subtitle: 'заточка коньков',
+			icon: 'skates'
+		},
+		{
+			subtitle: 'кафе',
+			icon: 'coffee'
+		},
+		{
+			subtitle: 'сушилка',
+			icon: 'dry'
+		},
+		{
+			subtitle: 'проведение мероприятий',
+			icon: 'megaphone'
+		},
+	]
+
+section.opportunities
+	.opportunities__wrapper
+		.opportunities__content
+			.opportunities__title.title возможности
+			.opportunities__grid
+				each item in items
+					.opportunities__item
+						.opportunities__item-subtitle= item.subtitle
+						.opportunities__item-icon
+							svg.opportunities__item-svg
+								use(xlink:href= `@svg/${item.icon}`) 
+	.opportunities__booking
+		.opportunities__booking-title.title-small забронируйте лед
+		.opportunities__booking-subtitle.subtitle-small прямо сейчас
+		button.opportunities__booking-button.button оставить заявку
