@@ -1,0 +1,38 @@
+-
+	const advantagesItems = [
+		{
+			title: 'Высокий потолок',
+			icon: 'ceil'
+		},
+		{
+			title: 'доброжелательный персонал',
+			icon: 'personal'
+		},
+		{
+			title: 'даем допинвентарь',
+			icon: 'inventory'
+		},
+		{
+			title: 'раздевалка открывается за час',
+			icon: 'dry'
+		},
+		{
+			title: 'Парковка рядом',
+			icon: 'parking'
+		},
+		{
+			title: 'зона спа, сауна',
+			icon: 'spa'
+		},
+	]
+
+section.advantages
+	.advantages__wrapper
+		h2.advantages__title.title наши преимущества
+		.advantages__cards
+			each item in advantagesItems
+				.advantages__item
+					.advantages__item-title= item.title
+					.advantages__item-icon
+						svg.advantages__item-svg
+							use(xlink:href= `@svg/${item.icon}`)
