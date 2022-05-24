@@ -53,3 +53,21 @@ const gridSwiper = new Swiper('.hockey__swiper', {
 		prevEl: '.hockey__swiper-prev',
 	},
 })
+
+const gallerySwiper = new Swiper('.gallery__swiper', {
+	slidesPerView: 1.2,
+	spaceBetween: 10,
+	navigation: {
+		nextEl: '.gallery__swiper-next',
+		prevEl: '.gallery__swiper-prev',
+	},
+	breakpoints: {
+		480: {
+			slidesPerView: 1.5,
+			spaceBetween: 20,
+		},
+		1024: {
+			slidesPerView: 2.5,
+		},
+	},
+})

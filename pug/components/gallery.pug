@@ -1,0 +1,25 @@
+-
+	const galleryImages = [
+		'request/slide-1.jpg',
+		'request/slide-2.jpg',
+		'request/slide-3.jpg',
+		'request/slide-4.jpg',
+		'hockey-grid/itemLeft-1.jpg',
+		'hockey-grid/itemLeft-2.jpg',
+		'hockey-grid/itemLeft-3.jpg',
+		'hockey-grid/itemLeft-4.jpg',
+		'hockey-grid/itemRight-1.jpg',
+		'hockey-grid/itemRight-2.jpg',
+		'hockey-grid/itemRight-3.jpg',
+	]
+
+section.gallery
+	.gallery__wrapper
+		.gallery__title.title Галерея
+		.gallery__swiper.swiper.my-swiper 
+			.gallery__swiper-wrapper.swiper-wrapper.my-swiper-wrapper
+				each img in galleryImages
+					.gallery__swiper-slide.swiper-slide.my-swiper-slide
+						img(src= `@img/${img}`, alt="photo")
+			.gallery__swiper-prev.swiper-button-prev.my-swiper-prev
+			.gallery__swiper-next.swiper-button-next.my-swiper-next
