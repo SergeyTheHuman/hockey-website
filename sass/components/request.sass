@@ -51,9 +51,17 @@
 				width: 100%
 
 .request__swiper
+	width: 750px
+	height: 500px
+	@include adaptiveProp('width', 750, 390, 1920, 768)
+	@include adaptiveProp('height', 550, 308, 1920, 768)
+	@include adaptiveProp('height', 308, 236, 768, 319)
 	margin: 0
 	flex-grow: 1
 	padding-bottom: 2.5rem
+	@media screen and ( max-width: 768px )
+		align-self: flex-start
+		width: 100%
 	&__wrapper
 	&-slide
 		img

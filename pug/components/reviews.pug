@@ -1,0 +1,36 @@
+-
+	const reviews = [
+		{
+			name: 'Павел К.',
+			review: 'Очень крутой лед! Много воздуха, отличные раздевалки. Все зашло.'
+		},
+		{
+			name: 'Алина С.',
+			review: 'Удобное местоположение. Быстро нашли взаимопонимание с сотрудниками. Отлично провели тренировку, площадка норм.'
+		},
+		{
+			name: 'Дмитрий Е.',
+			review: 'Суперский лед! Все понравилось, единственный минус на мой взгляд - в кафетерие нет завтраков.'
+		},
+		{
+			name: 'Златополк Р.',
+			review: 'Прекрасно покатался с семьей, персонал очень добрый, цены хорошие.'
+		},
+		{
+			name: 'Григорий К.',
+			review: 'Все было круто. Отдельная благодарность девушке-тренеру на катке. Быстро научила кататься и помогла с выбором коньков.'
+		},
+	]
+
+section.reviews
+	.reviews__wrapper.wrapper
+		h2.reviews__title.title отзывы
+		.reviews__swiper.swiper.my-swiper 
+			.reviews__swiper-wrapper.swiper-wrapper.my-swiper-wrapper
+				each review in reviews
+					.reviews__swiper-slide.swiper-slide.my-swiper-slide
+						.reviews__item
+							.reviews__item-name.subtitle-small= review.name
+							.reviews__item-review.text-big= review.review
+			.reviews__swiper-prev.swiper-button-prev.my-swiper-prev
+			.reviews__swiper-next.swiper-button-next.my-swiper-next

@@ -1,0 +1,70 @@
+.contacts
+	margin-top: -10rem
+	@include adaptiveProp('margin-top', -200, -120, 1920, 1024)
+	@include adaptiveProp('margin-top', -120, -80, 1024, 768)
+	@include adaptiveProp('margin-top', -80, -40, 768, 319)
+	width: 100%
+	height: 1200px
+	@include adaptiveProp('height', 1200, 660, 1920, 1024)
+	@include adaptiveProp('height', 660, 660, 1024, 319)
+	background-image: url('@img/contacts/contacts__background.png'), url('@img/contacts/contacts__map.png')
+	background-size: contain, 100% 83%
+	background-position: top center, bottom center
+	background-repeat: no-repeat
+	@media screen and ( max-width: 600px )
+		background-image: url(../images/contacts/contacts__squares.png), url(../images/contacts/contacts__background-small.png), url(../images/contacts/contacts__map.png)
+		background-size: 32vw, 200% 40%, 200% 83%
+		background-position: 0 84%, 50% -10%, bottom center
+	&__wrapper
+		padding-top: 300px
+		@include adaptiveProp('padding-top', 300, 150, 1920, 1024)
+		@include adaptiveProp('padding-top', 150, 90, 1024, 319)
+		width: 100%
+		display: flex
+		justify-content: center
+		align-items: center
+		@media screen and ( max-width: 768px )
+			flex-direction: column
+			text-align: center
+			gap: 90px
+			@include adaptiveProp('gap', 90, 140, 768, 319)
+
+	&__title,
+	&__content
+		width: 50%
+		color: $color-white
+		@media screen and ( max-width: 768px )
+			width: 100%
+	&__title
+	&__content
+		display: flex
+		flex-direction: column
+	&__links
+		display: flex
+		gap: 4rem
+		@include adaptiveProp('gap', 80, 30, 1920, 1024)
+		@include adaptiveProp('gap', 30, 30, 1024, 319)
+	&__address
+		margin-bottom: 1em
+	&__link
+		color: $color-white
+		text-decoration: none
+		position: relative
+		transition: $transition
+		&:not(:last-child)
+			margin-bottom: 1em
+			&::before
+				content: ''
+				position: absolute
+				transition: $transition
+				bottom: calc(-0.5em - 1px)
+				left: 0
+				width: 4em
+				height: 2px
+				background-color: $color-white
+				@media screen and ( max-width: 768px )
+					left: 50%
+					transform: translateX(-50%)
+		&:hover
+			color: #FFFFFF
+			text-shadow: 0 0 5px $color-red, 0 0 10px $color-red, 0 0 15px $color-red, 0 0 20px $color-red, 0 0 30px $color-red, 0 0 40px $color-red

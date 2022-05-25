@@ -32,6 +32,7 @@ $burgerButtons.forEach((btn) => {
 })
 
 const requestSwiper = new Swiper('.request__swiper', {
+	grabCursor: true,
 	slidesPerView: 1.1,
 	spaceBetween: 10,
 	navigation: {
@@ -46,6 +47,7 @@ const requestSwiper = new Swiper('.request__swiper', {
 })
 
 const gridSwiper = new Swiper('.hockey__swiper', {
+	grabCursor: true,
 	slidesPerView: 1.5,
 	spaceBetween: 20,
 	navigation: {
@@ -55,6 +57,7 @@ const gridSwiper = new Swiper('.hockey__swiper', {
 })
 
 const gallerySwiper = new Swiper('.gallery__swiper', {
+	grabCursor: true,
 	slidesPerView: 1.2,
 	spaceBetween: 10,
 	navigation: {
@@ -73,10 +76,21 @@ const gallerySwiper = new Swiper('.gallery__swiper', {
 })
 
 const eventsSwiper = new Swiper('.events__swiper', {
+	grabCursor: true,
 	slidesPerView: 1,
 	spaceBetween: 20,
 	navigation: {
 		nextEl: '.events__swiper-next',
 		prevEl: '.events__swiper-prev',
+	},
+})
+
+const reviewsSwiper = new Swiper('.reviews__swiper', {
+	grabCursor: true,
+	slidesPerView: 'auto',
+	spaceBetween: 20,
+	navigation: {
+		nextEl: '.reviews__swiper-next',
+		prevEl: '.reviews__swiper-prev',
 	},
 })

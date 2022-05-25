@@ -1,0 +1,77 @@
+.reviews
+	width: 100%
+	height: 1200px
+	display: flex
+	justify-content: center
+	align-items: center
+	@include adaptiveProp('height', 1200, 700, 1920, 1024)
+	@include adaptiveProp('height', 700, 570, 1024, 319)
+	background-image: url('@img/reviews/reviews-rectangles-bottom.png'), url('@img/reviews/reviews-rectangles-top.png'), url('@img/reviews/background-review.png')
+	background-size: 30vw, 15vw, cover
+	background-position: left bottom, right 10%, top left
+	background-repeat: no-repeat, no-repeat, no-repeat
+	@media screen and ( max-width: 768px )
+		background-image: url('@img/reviews/reviews-rectangles-top.png'), url('@img/reviews/background-review.png')
+		background-size: 25vw, cover
+		background-position: right 10%, center
+		background-repeat: no-repeat, no-repeat
+	&__wrapper
+		width: 100%
+		display: flex
+		justify-content: center
+		align-items: flex-start
+		gap: 25rem
+		padding-top: 12.5rem
+		@include adaptiveProp('padding-top', 250, 150, 1920, 1024)
+		@include adaptiveProp('padding-top', 150, 100, 1024, 319)
+		@include adaptiveProp('gap', 500, 170, 1920, 768)
+		padding-right: 0
+		@media screen and ( max-width: 768px )
+			flex-direction: column
+			gap: 2rem
+	&__title
+		color: $color-black
+	&__swiper
+		width: 100% !important
+		height: auto !important
+		padding-bottom: 2.5rem
+		&-wrapper
+		&-slide
+			width: 600px
+			@include adaptiveProp('width', 600, 390, 1920, 1024)
+			@include adaptiveProp('width', 390, 274, 1024, 319)
+		&-prev
+			width: 10%
+		&-next
+			left: 13%
+			width: 85%
+			@media screen and ( max-width: 768px )
+				width: 76%
+	&__item
+		background-color: $color-white
+		filter: drop-shadow(0px 10px 32px rgba(200, 215, 239, 0.5))
+		width: 100%
+		height: 100%
+		padding: 35px
+		min-height: 350px
+		@include adaptiveProp('min-height', 350, 230, 1920, 1024)
+		@include adaptiveProp('min-height', 230, 200, 1024, 319)
+		@include adaptiveProp('padding', 35, 25, 1920, 1024)
+		@include adaptiveProp('padding', 25, 20, 1024, 319)
+		&-name
+			color: $color-blue
+			text-align: right
+			position: relative
+			margin-bottom: 2.5rem
+			@include adaptiveProp('margin-bottom', 50, 30, 1920, 1024)
+			@include adaptiveProp('margin-bottom', 30, 30, 1024, 319)
+			&::before
+				content: ''
+				position: absolute
+				top: 50%
+				left: 0
+				height: 80%
+				width: 30%
+				transform: translateY(-50%)
+				@include bg('@img/reviews/quotes.png', contain, left center)
+		&-review

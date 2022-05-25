@@ -34,6 +34,13 @@ svg path
 body.no-scroll
 	overflow: hidden
 
+.wrapper
+	padding: 0 10rem
+	@include adaptiveProp('padding-left',200,110,1920,1024)
+	@include adaptiveProp('padding-left',110,20,1024,319)
+	@include adaptiveProp('padding-right',200,110,1920,1024)
+	@include adaptiveProp('padding-right',110,20,1024,319)
+
 .title
 	@include font('Druk Cyr', 4.8rem, 500)
 	font-style: italic
@@ -95,15 +102,6 @@ body.no-scroll
 	@include adaptiveProp('font-size', 32, 22, 1920, 1024)
 	@include adaptiveProp('font-size', 22, 18, 1024, 319)
 
-.my-swiper
-	width: 750px
-	height: 500px
-	@include adaptiveProp('width', 750, 390, 1920, 768)
-	@include adaptiveProp('height', 550, 308, 1920, 768)
-	@include adaptiveProp('height', 308, 236, 768, 319)
-	@media screen and ( max-width: 768px )
-		align-self: flex-start
-		width: 100%
 
 .my-swiper-prev,
 .my-swiper-next
