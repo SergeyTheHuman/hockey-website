@@ -71,3 +71,12 @@ const gallerySwiper = new Swiper('.gallery__swiper', {
 		},
 	},
 })
+
+const eventsSwiper = new Swiper('.events__swiper', {
+	slidesPerView: 1,
+	spaceBetween: 20,
+	navigation: {
+		nextEl: '.events__swiper-next',
+		prevEl: '.events__swiper-prev',
+	},
+})

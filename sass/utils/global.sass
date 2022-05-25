@@ -47,10 +47,16 @@ body.no-scroll
 		letter-spacing: 0.1em
 
 .text
-	line-height: 1.4em
 	font-size: 1rem
 	@include adaptiveProp('font-size', 20, 14, 1920, 1024)
 	@include adaptiveProp('font-size', 14, 12, 1024, 319)
+	line-height: 1.4em
+
+.text-big
+	font-size: 1.2rem
+	line-height: 1.33em
+	@include adaptiveProp('font-size', 24, 18, 1920, 1024)
+	@include adaptiveProp('font-size', 18, 16, 1024, 319)
 
 .button
 	@include font('Bebas Neue', 1.1rem, 400)

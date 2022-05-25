@@ -1,0 +1,40 @@
+-
+	const eventsSlides = [
+		{
+			date_1: '12-14',
+			month_1: 'апреля',
+			text_1: 'День открытых дверей',
+			date_2: '20-24',
+			month_2: 'мая',
+			text_2: 'Открытая тренировка'
+		},
+		{
+			date_1: '20-22',
+			month_1: 'июня',
+			text_1: 'Дружеские матчи',
+			date_2: '1-10',
+			month_2: 'июля',
+			text_2: 'Турнир молодежной хоккейной лиги'
+		},
+	]
+
+section.events 
+	.events__wrapper
+		h2.events__title.title события
+		.events__swiper.swiper.my-swiper 
+			.events__swiper-wrapper.swiper-wrapper.my-swiper-wrapper
+				each slide in eventsSlides
+					.events__swiper-slide.swiper-slide.my-swiper-slide
+						.events__item
+							.events__item-col
+								.events__item-date
+									h4.title.events__item-numbers= slide.date_1
+									span.subtitle-small.events__item-month= slide.month_1
+								.text-big.events__item-text= slide.text_1
+							.events__item-col
+								.events__item-date
+									h4.title.events__item-numbers= slide.date_2
+									span.subtitle-small.events__item-month= slide.month_2
+								.text-big.events__item-text= slide.text_2
+			.events__swiper-prev.swiper-button-prev.my-swiper-prev
+			.events__swiper-next.swiper-button-next.my-swiper-next

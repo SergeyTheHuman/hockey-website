@@ -1,0 +1,80 @@
+.events
+	margin-top: -10rem
+	@include adaptiveProp('margin-top',-150,-100,1920,1024)
+	@include adaptiveProp('margin-top',-100,-50,1024,319)
+	padding-bottom: 2.5rem
+	width: 100%
+	&__wrapper
+		padding: 0 10rem
+		display: flex
+		flex-direction: column
+		justify-content: center
+		gap: 5rem
+		@include adaptiveProp('padding-left',200,110,1920,1024)
+		@include adaptiveProp('padding-left',110,20,1024,319)
+		@include adaptiveProp('padding-right',200,110,1920,1024)
+		@include adaptiveProp('padding-right',110,20,1024,319)
+		@include adaptiveProp('gap',100,60,1920,1024)
+		@include adaptiveProp('gap',60,40,1024,319)
+	&__title
+		color: $color-black
+	&__swiper
+		width: 100%
+		height: auto
+		padding-bottom: 50px
+		&-wrapper
+		&-slide
+		&-prev
+			left: calc(50% + 15px)
+			width: 5%
+			@media screen and ( max-width: 768px )
+				left: 1px
+				width: 10%
+		&-next
+			right: 0
+			width: 42%
+			@media screen and ( max-width: 768px )
+				left: 15%
+				width: 85%
+	&__item
+		display: flex
+		justify-content: center
+		align-items: center
+		gap: 1rem
+		@media screen and ( max-width: 768px )
+			flex-direction: column
+			padding-left: 0
+
+		&-col
+			border-top: 2px solid $color-blue
+			border-bottom: 2px solid $color-blue
+			padding: 1rem 0
+			width: calc(50% - 0.5rem)
+			display: flex
+			align-items: center
+			gap: 5rem
+			@include adaptiveProp('gap',100,75,1920,1024)
+			@include adaptiveProp('gap',75,25,1024,319)
+			@media screen and ( max-width: 768px )
+				width: 100%
+		&-date
+			width: fit-content
+			padding-left: 3px
+			flex-shrink: 0
+			position: relative
+			&::after
+				content: ""
+				position: absolute
+				transform: translateY(-50%) rotate(15deg)
+				top: 50%
+				left: 120%
+				width: 2px
+				height: 90%
+				background-color: $color-blue
+		&-numbers
+		&-numbers,
+		&-month
+			color: $color-red
+		&-month
+		&-text
+			padding-left: 0.5rem
