@@ -1,0 +1,26 @@
+.questions
+	margin-top: -10vw
+	width: 100%
+	height: 400px
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
+	gap: 3rem
+	@include bg('@img/questions/squares__questions.png', 12vw, bottom right)
+	@include adaptiveProp('background-size', 150, 75, 768, 319 )
+	@include adaptiveProp('height', 400, 250, 1920, 1024 )
+	@include adaptiveProp('height', 250, 250, 1024, 319 )
+	@include adaptiveProp('gap', 60, 40, 1920, 1024 )
+	@include adaptiveProp('gap', 40, 40, 1024, 319 )
+	&__content
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		gap: 0px
+	&__title
+		color: $color-black
+	&__button
+		&:hover
+			background-color: darken( $color-blue, 15 )
