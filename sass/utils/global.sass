@@ -34,6 +34,9 @@ svg path
 body.no-scroll
 	overflow: hidden
 
+a
+	text-decoration: none
+
 .wrapper
 	padding: 0 10rem
 	@include adaptiveProp('padding-left',200,110,1920,1024)
@@ -70,6 +73,7 @@ body.no-scroll
 	@include adaptiveProp('font-size', 22, 18, 1920, 1024)
 	@include adaptiveProp('font-size', 18, 16, 1024, 319)
 	line-height: 1em
+	user-select: none
 	letter-spacing: 0.227em
 	text-transform: uppercase
 	color: $color-white
@@ -101,7 +105,6 @@ body.no-scroll
 	letter-spacing: 0.125em
 	@include adaptiveProp('font-size', 32, 22, 1920, 1024)
 	@include adaptiveProp('font-size', 22, 18, 1024, 319)
-
 
 .my-swiper-prev,
 .my-swiper-next

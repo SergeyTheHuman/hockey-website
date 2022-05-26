@@ -1,1 +1,18 @@
 footer.footer
+	.footer__wrapper.wrapper
+		.footer__grid
+			.footer__col 
+				.footer__item.text © 2022
+				.footer__item 
+					.footer__contacts-text.text  Мы в соцсетях:
+					.footer__contacts-links.text 
+						each link in ['VK', 'OK', 'Telegram']
+							a.text.footer__contacts-a(href='https://google.com' target="_blank")= link
+			.footer__col
+				.footer__item.center
+					.footer__logo
+						img.footer__logo-img(src='@img/header/logo.png')
+				.footer__item.text Политика конфеденциальности
+			.footer__col
+				.footer__item.text Ледовый комплекс «Луч».#[br] Все права защищены.
+				.footer__item.text Москва, Волоколамское шоссе, д.88

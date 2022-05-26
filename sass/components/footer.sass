@@ -1,1 +1,72 @@
 .footer
+	width: 100%
+	height: 350px
+	@include adaptiveProp('height',350,250,1920,1024)
+	@include adaptiveProp('height',250,250,1024,650)
+	background-color: $color-red
+	color: $color-white
+	@media screen and ( max-width: 650px )
+		height: 360px
+	a
+		color: $color-white
+	&__wrapper
+		width: 100%
+		height: 100%
+		display: flex
+		justify-content: center
+		align-items: center
+	&__grid
+		padding: 40px 0
+		width: 100%
+		height: 100%
+		display: grid
+		grid-template-columns: repeat(3, 1fr)
+		column-gap: 1rem
+		@media screen and ( max-width: 650px )
+			grid-template-columns: 1fr
+			row-gap: 1rem
+			column-gap: 0
+			@include adaptiveProp('row-gap',20,10,650,319)
+	&__col
+		display: flex
+		flex-direction: column
+		justify-content: space-between
+		@media screen and ( max-width: 650px )
+			justify-content: unset
+			gap: 1rem
+			@include adaptiveProp('gap',20,10,650,319)
+		&:nth-child(1)
+			text-align: left
+			@media screen and ( max-width: 650px )
+				text-align: center
+		&:nth-child(2)
+			text-align: center
+		&:nth-child(3)
+			text-align: right
+			@media screen and ( max-width: 650px )
+				text-align: center
+	&__item.center
+		align-self: center
+		justify-content: center
+		display: flex
+		flex-grow: 1
+	&__logo
+		max-width: 15vw
+		@media screen and ( max-width: 650px )
+			@include adaptiveProp('max-width',220,170,650,319)
+		&-img
+			width: 100%
+			height: 100%
+			object-fit: contain
+			object-position: center
+	&__contacts-a
+		transition: $transition
+		display: inline-block
+		position: relative
+		&:hover
+			opacity: .5
+		&:not(:first-child)
+			padding-left: 0.35rem
+		&:not(:last-child)
+			padding-right: 0.35rem
+			border-right: 1px solid $color-white

@@ -1,12 +1,30 @@
 import { isWebp } from './components/isWebp.js'
 import Swiper from 'swiper/bundle'
-console.log(Swiper)
+
 isWebp()
 
 const $burgerButtons = document.querySelectorAll('.header__top-burger')
 const $burgerMenu = document.querySelector('.burger__menu')
 const $body = document.querySelector('body')
 const $html = document.querySelector('html')
+const $anchors = document.querySelectorAll('a[href*="#"]')
+
+$burgerMenu.addEventListener('click', (e) => {
+	e.preventDefault()
+	const link = e.target.closest('.burger__nav-a')
+	if (link) {
+		$burgerButtons.forEach((btn) => btn.classList.remove('active'))
+		$burgerMenu.classList.remove('opened')
+		$body.classList.remove('no-scroll')
+		$html.classList.remove('no-scroll')
+
+		const sectionId = link.getAttribute('href')
+		document.querySelector(sectionId).scrollIntoView({
+			behavior: 'smooth',
+			block: 'center',
+		})
+	}
+})
 
 $burgerButtons.forEach((btn) => {
 	btn.addEventListener('click', () => {
@@ -14,19 +32,19 @@ $burgerButtons.forEach((btn) => {
 		$burgerMenu.classList.toggle('opened')
 
 		if ($body.classList.contains('no-scroll')) {
-			setTimeout(() => {
-				$body.classList.remove('no-scroll')
-			}, 300)
+			$body.classList.remove('no-scroll')
 		} else {
-			$body.classList.add('no-scroll')
+			setTimeout(() => {
+				$body.classList.add('no-scroll')
+			}, 500)
 		}
 
 		if ($html.classList.contains('no-scroll')) {
-			setTimeout(() => {
-				$html.classList.remove('no-scroll')
-			}, 300)
+			$html.classList.remove('no-scroll')
 		} else {
-			$html.classList.add('no-scroll')
+			setTimeout(() => {
+				$html.classList.add('no-scroll')
+			}, 500)
 		}
 	})
 })
@@ -45,7 +63,6 @@ const requestSwiper = new Swiper('.request__swiper', {
 		},
 	},
 })
-
 const gridSwiper = new Swiper('.hockey__swiper', {
 	grabCursor: true,
 	slidesPerView: 1.5,
@@ -55,7 +72,6 @@ const gridSwiper = new Swiper('.hockey__swiper', {
 		prevEl: '.hockey__swiper-prev',
 	},
 })
-
 const gallerySwiper = new Swiper('.gallery__swiper', {
 	grabCursor: true,
 	slidesPerView: 1.2,
@@ -74,7 +90,6 @@ const gallerySwiper = new Swiper('.gallery__swiper', {
 		},
 	},
 })
-
 const eventsSwiper = new Swiper('.events__swiper', {
 	grabCursor: true,
 	slidesPerView: 1,
@@ -84,7 +99,6 @@ const eventsSwiper = new Swiper('.events__swiper', {
 		prevEl: '.events__swiper-prev',
 	},
 })
-
 const reviewsSwiper = new Swiper('.reviews__swiper', {
 	grabCursor: true,
 	slidesPerView: 'auto',

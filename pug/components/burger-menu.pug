@@ -1,10 +1,42 @@
+-
+	const burgerLinks = [
+		{
+			text: 'Мы',
+			id: 'request'
+		},
+		{
+			text: 'Возможности',
+			id: 'opportunities'
+		},
+		{
+			text: 'Преимущества',
+			id: 'advantages'
+		},
+		{
+			text: 'Галерея',
+			id: 'gallery'
+		},
+		{
+			text: 'События',
+			id: 'events'
+		},
+		{
+			text: 'Отзывы',
+			id: 'reviews'
+		},
+		{
+			text: 'Контакты',
+			id: 'contacts'
+		},
+	]
+
 .burger__menu
 	.burger__header 
 		.header__top-burger
 		.header__top-ice.ice-small
-			a(href='#') Бронь льда
+			a(href='https://google.com' target="_blank") Бронь льда
 		.header__top-ice.ice-large
-			a(href='#') Забронировать лед
+			a(href='https://google.com' target="_blank") Забронировать лед
 		.header__top-number 
 			a(href='tel:84956020232') 8 495 602 02 32
 	.header__logo-wrapper
@@ -12,9 +44,9 @@
 			img.header__logo-img(src='@img/header/logo.png')
 	.burger__content
 		nav.burger__nav 
-			each li in ['Мы','Возможности','Преимущества','Галерея','События','Отзывы','Контакты',]
+			each li in burgerLinks
 				li.burger__nav-li
-					a.burger__nav-a.title(href="#")= li
+					a.burger__nav-a.title(href=`#${li.id}`)= li.text
 		.burger__footer
 			.burger__footer-wrapper
 				.burger__footer-contacts.burger__contacts
