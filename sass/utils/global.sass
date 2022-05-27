@@ -56,6 +56,16 @@ a
 	@media screen and ( max-width: 1024px )
 		letter-spacing: 0.1em
 
+.title-48
+	@include font('Druk Cyr', 2.4rem, 500)
+	@include adaptiveProp('font-size', 48, 32, 1920, 1024)
+	@include adaptiveProp('font-size', 32, 24, 1024, 319)
+	font-style: italic
+	line-height: 1.27em
+	letter-spacing: 0.0625em
+	text-transform: uppercase
+	color: #000000
+
 .text
 	font-size: 1rem
 	@include adaptiveProp('font-size', 20, 14, 1920, 1024)

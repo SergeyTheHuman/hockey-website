@@ -1,0 +1,15 @@
+.ice__booking-wrapper.form
+	form#ice__booking-form.ice__booking-form.form__body(action='#')
+		.form__close
+		h2.form__title.title-48 Бронирование льда
+		.form__inputs
+			.form__item
+				input(type="text" name='name' placeholder='Имя').text.form__input#formName
+			.form__item
+				input(type="text" name='email' placeholder='E-mail').text.form__input#formEmail
+		.form__item
+			input(type="text" name='date' placeholder='Дата и время').text.form__input.form__date#formDate
+		.form__item
+			textarea(name="message" placeholder='Сообщение').text.form__input#formMessage
+		p.form__agreement Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь c политикой конфиденциальности.
+		button.button.form__button(type='submit') Отправить
