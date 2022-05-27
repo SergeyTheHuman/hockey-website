@@ -29,7 +29,21 @@
 			id: 'contacts'
 		},
 	]
-
+	const burgerSocial = [
+		{
+			name: 'VK',
+			url: 'https://vk.com/'
+		},
+		{
+			name: 'OK',
+			url: 'https://ok.ru/'
+		},
+		{
+			name: 'Telegram',
+			url: 'https://web.telegram.org/'
+		},
+	]
+	
 .burger__menu
 	.burger__header 
 		.header__top-burger
@@ -52,6 +66,6 @@
 				.burger__footer-contacts.burger__contacts
 					.burger__contacts-text  Мы в соцсетях:
 					.burger__contacts-links 
-						each link in ['VK', 'OK', 'Telegram']
-							a.burger__contacts-a(href='https://google.com' target="_blank")= link
+						each link in burgerSocial
+							a.burger__contacts-a(href= link.url target="_blank")= link.name
 				.burger__footer-address.burger__address Москва, #[br]Волоколамское шоссе, д.88

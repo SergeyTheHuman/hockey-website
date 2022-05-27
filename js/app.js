@@ -27,12 +27,10 @@ if ($backToHomeBtn) {
 }
 
 $burgerMenu.addEventListener('click', (e) => {
-	e.preventDefault()
 	const link = e.target.closest('.burger__nav-a')
-	console.log(window.location.href)
 	if (link) {
+		e.preventDefault()
 		const sectionId = link.getAttribute('href')
-		console.log(sectionId)
 		if (e.target.closest('.thanks__header')) {
 			window.location.href = `index.html${sectionId}`
 		}

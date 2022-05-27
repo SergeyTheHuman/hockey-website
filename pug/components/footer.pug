@@ -1,3 +1,19 @@
+-
+	const footerSocial = [
+		{
+			name: 'VK',
+			url: 'https://vk.com/'
+		},
+		{
+			name: 'OK',
+			url: 'https://ok.ru/'
+		},
+		{
+			name: 'Telegram',
+			url: 'https://web.telegram.org/'
+		},
+	]
+
 footer.footer
 	.footer__wrapper.wrapper
 		.footer__grid
@@ -6,8 +22,8 @@ footer.footer
 				.footer__item 
 					.footer__contacts-text.text  Мы в соцсетях:
 					.footer__contacts-links.text 
-						each link in ['VK', 'OK', 'Telegram']
-							a.text.footer__contacts-a(href='https://google.com' target="_blank")= link
+						each link in footerSocial
+							a.text.footer__contacts-a(href= link.url target="_blank")= link.name
 			.footer__col
 				.footer__item.center
 					.footer__logo
