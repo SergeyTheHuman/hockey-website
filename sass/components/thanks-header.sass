@@ -1,0 +1,54 @@
+.thanks__header > .header__top
+	.header__top-ice a,
+	.header__top-number a
+		color: $color-black
+		&:hover
+			color: $color-red
+	.header__top-burger
+		&::after,
+		&::before
+			background-color: $color-black
+.thanks
+	&__header
+		background-image: url('@img/thanks/squares-left.png'), url('@img/thanks/squares-right.png'), url('@img/thanks/background.png')
+		background-size: 20vw, 20vw, contain
+		background-position: left center, right center, bottom center
+		background-repeat: no-repeat
+		display: flex
+		flex-direction: column
+		align-items: center
+		gap: 4.5rem
+		@include adaptiveProp('gap', 90, 60, 1920, 1024)
+		@include adaptiveProp('gap', 60, 45, 1024, 319)
+		height: 1200px
+		@include adaptiveProp('height', 1200, 700, 1920, 1024)
+		@include adaptiveProp('height', 700, 650, 1024, 319)
+		@media screen and ( max-width: 1024px )
+			background-position: left 60%, right 60%, bottom center
+		@media screen and ( max-width: 768px )
+			background-image: url('@img/thanks/background.png')
+			background-size: auto 50%
+			background-position: bottom center
+	&__logo
+		width: 266px
+		@include adaptiveProp('width', 266, 144, 1920, 1024)
+		@include adaptiveProp('width', 144, 100, 1024, 319)
+		&-img
+			width: 100%
+	&__content
+		display: flex
+		flex-direction: column
+		align-items: center
+		text-align: center
+		gap: 2rem
+		@include adaptiveProp('gap', 40, 20, 1920, 319)
+	&__title
+	&__text
+		max-width: 400px
+	&__title,
+	&__text
+		padding: 0 1.5em
+		color: $color-black
+	&__button
+		&:hover
+			background-color: darken($color-blue, 15)

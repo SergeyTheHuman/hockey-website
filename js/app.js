@@ -6,19 +6,40 @@ isWebp()
 const $burgerButtons = document.querySelectorAll('.header__top-burger')
 const $burgerMenu = document.querySelector('.burger__menu')
 const $body = document.querySelector('body')
-const $html = document.querySelector('html')
-const $anchors = document.querySelectorAll('a[href*="#"]')
+const $backToHomeBtn = document.querySelector('.thanks__button')
+
+function lock(element) {
+	const lockPadding = window.innerWidth - $body.clientWidth + 'px'
+
+	element.classList.add('no-scroll')
+	element.style.paddingRight = lockPadding
+}
+
+function unlock(element) {
+	element.classList.remove('no-scroll')
+	element.style.paddingRight = ''
+}
+
+if ($backToHomeBtn) {
+	$backToHomeBtn.addEventListener('click', () => {
+		window.location.href = `index.html`
+	})
+}
 
 $burgerMenu.addEventListener('click', (e) => {
 	e.preventDefault()
 	const link = e.target.closest('.burger__nav-a')
+	console.log(window.location.href)
 	if (link) {
+		const sectionId = link.getAttribute('href')
+		console.log(sectionId)
+		if (e.target.closest('.thanks__header')) {
+			window.location.href = `index.html${sectionId}`
+		}
 		$burgerButtons.forEach((btn) => btn.classList.remove('active'))
 		$burgerMenu.classList.remove('opened')
-		$body.classList.remove('no-scroll')
-		$html.classList.remove('no-scroll')
+		unlock($body)
 
-		const sectionId = link.getAttribute('href')
 		document.querySelector(sectionId).scrollIntoView({
 			behavior: 'smooth',
 			block: 'center',
@@ -31,21 +52,7 @@ $burgerButtons.forEach((btn) => {
 		$burgerButtons.forEach((btn) => btn.classList.toggle('active'))
 		$burgerMenu.classList.toggle('opened')
 
-		if ($body.classList.contains('no-scroll')) {
-			$body.classList.remove('no-scroll')
-		} else {
-			setTimeout(() => {
-				$body.classList.add('no-scroll')
-			}, 500)
-		}
-
-		if ($html.classList.contains('no-scroll')) {
-			$html.classList.remove('no-scroll')
-		} else {
-			setTimeout(() => {
-				$html.classList.add('no-scroll')
-			}, 500)
-		}
+		$body.classList.contains('no-scroll') ? unlock($body) : lock($body)
 	})
 })
 
