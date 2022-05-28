@@ -8,19 +8,20 @@ html(lang="ru")
 		include utils/fonts
 		title Спасибо!
 	body
-		header.thanks__header
-			include components/header-menu
-			.thanks__logo
-				img.thanks__logo-img(src='@img/thanks/logo-blue.png')
-			.thanks__content 
-				.thanks__title.title Спасибо
-				.thanks__text.text Ваша заявка отправлена.#[br] В ближайшее время с вами свяжется менеджер по указанным контактным данным.
-				button.thanks__button.button на главную
-			include components/burger-menu
-		
-		include components/connect-us-modal
-		
-		include components/ice-booking-modal
+		.main-wrapper
+			header.thanks__header
+				include components/header-menu
+				.thanks__logo
+					img.thanks__logo-img(src='@img/thanks/logo-blue.png')
+				.thanks__content 
+					.thanks__title.title Спасибо
+					.thanks__text.text Ваша заявка отправлена.#[br] В ближайшее время с вами свяжется менеджер по указанным контактным данным.
+					button.thanks__button.button на главную
+				include components/burger-menu
+			
+			include components/connect-us-modal
+			
+			include components/ice-booking-modal
 
-		include components/footer
+			include components/footer
 		script(src='js/app.min.js')

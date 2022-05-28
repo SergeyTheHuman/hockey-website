@@ -46,31 +46,24 @@
 		padding-top: 2rem
 		@include adaptiveProp('padding-top', 40, 20, 1920, 1024)
 		@include adaptiveProp('width', 400, 225, 1920, 1024)
-
 	&__title
 		color: $color-black
 		margin-bottom: 1.5rem
 		letter-spacing: 0.052em
 		@include adaptiveProp('margin-bottom', 30, 15, 1920, 1024)
 		@include adaptiveProp('margin-bottom', 15, 10, 1024, 319)
-
 .hockey__swiper
 	width: 100% !important
 	height: auto !important
 	padding-bottom: 2.5rem
 	@media screen and ( min-width: 1025px )
 		display: none
-	&-wrapper
-	&-prev,
-	&-next
-
 	&-prev
 		width: 10%
 
 	&-next
 		left: 15%
 		width: 80%
-
 .hockey-grid__slide
 	display: flex
 	flex-direction: column
@@ -86,4 +79,3 @@
 			height: 100%
 			object-fit: cover
 			object-position: center
-	&-content

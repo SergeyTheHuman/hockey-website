@@ -23,6 +23,8 @@
 		height: 1200px
 		@include adaptiveProp('height', 1200, 700, 1920, 1024)
 		@include adaptiveProp('height', 700, 650, 1024, 319)
+		@media screen and ( min-width: 1920px )
+			background-size: 384px, 384px, contain
 		@media screen and ( max-width: 1024px )
 			background-position: left 60%, right 60%, bottom center
 		@media screen and ( max-width: 768px )
@@ -42,7 +44,6 @@
 		text-align: center
 		gap: 2rem
 		@include adaptiveProp('gap', 40, 20, 1920, 319)
-	&__title
 	&__text
 		max-width: 400px
 	&__title,

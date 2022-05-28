@@ -6,6 +6,8 @@
 	background-position: center, top right
 	background-repeat: no-repeat
 	margin-top: -10rem
+	@media screen and ( min-width: 1920px )
+		background-size: cover, 576px
 	@include adaptiveProp( 'margin-top', -200, -200, 768, 500)
 	@include adaptiveProp( 'height', 1300, 800, 1920, 1024)
 	@include adaptiveProp( 'height', 800, 650, 1024, 319)
@@ -32,7 +34,6 @@
 		@include adaptiveProp( 'height', 500, 310, 1920, 1024)
 		@include adaptiveProp( 'height', 310, 230, 1024, 319)
 		padding-bottom: 50px
-		&-wrapper
 		&-slide
 			img
 				width: 100%

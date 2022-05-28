@@ -22,6 +22,7 @@ $body.addEventListener('keydown', (e) => {
 
 	if (e.keyCode === 27 && modalForm) {
 		activeModal.classList.remove('opened-modal')
+		modalForm.reset()
 	}
 })
 $forms.forEach((form) => {
@@ -84,10 +85,12 @@ $modals.forEach((modal) => {
 		if (!e.target.closest('.form__body')) {
 			$bookingModal.classList.remove('opened-modal')
 			$connectModal.classList.remove('opened-modal')
+			modal.querySelector('.form__body').reset()
 		}
 		if (e.target.classList.contains('form__close')) {
 			$bookingModal.classList.remove('opened-modal')
 			$connectModal.classList.remove('opened-modal')
+			modal.querySelector('.form__body').reset()
 		}
 	})
 })

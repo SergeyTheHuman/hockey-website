@@ -52,6 +52,8 @@
 		flex-grow: 1
 	&__logo
 		max-width: 15vw
+		@media screen and ( min-width: 1920px )
+			max-width: 288px
 		@media screen and ( max-width: 650px )
 			@include adaptiveProp('max-width',220,170,650,319)
 		&-img

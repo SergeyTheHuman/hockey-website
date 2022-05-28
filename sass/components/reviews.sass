@@ -10,6 +10,8 @@
 	background-size: 30vw, 15vw, cover
 	background-position: left bottom, right 10%, top left
 	background-repeat: no-repeat, no-repeat, no-repeat
+	@media screen and ( min-width: 1920px )
+		background-size: 576px, 288px, cover
 	@media screen and ( max-width: 768px )
 		background-image: url('@img/reviews/reviews-rectangles-top.png'), url('@img/reviews/background-review.png')
 		background-size: 25vw, cover
@@ -35,7 +37,6 @@
 		width: 100% !important
 		height: auto !important
 		padding-bottom: 2.5rem
-		&-wrapper
 		&-slide
 			width: 600px
 			@include adaptiveProp('width', 600, 390, 1920, 1024)
@@ -74,4 +75,3 @@
 				width: 30%
 				transform: translateY(-50%)
 				@include bg('@img/reviews/quotes.png', contain, left center)
-		&-review

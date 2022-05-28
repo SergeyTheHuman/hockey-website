@@ -13,6 +13,8 @@
 	align-items: center
 	gap: 3rem
 	@include bg('@img/questions/squares__questions.png', 12vw, bottom right)
+	@media screen and ( min-width: 1920px )
+		background-size: 230px
 	@include adaptiveProp('background-size', 150, 75, 768, 319 )
 	@include adaptiveProp('gap', 60, 40, 1920, 1024 )
 	@include adaptiveProp('gap', 40, 40, 1024, 319 )

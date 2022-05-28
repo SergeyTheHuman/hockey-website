@@ -1,3 +1,13 @@
+.main-wrapper>.header__logo
+	display: flex
+	justify-self: center
+	&-wrapper
+		width: 100%
+		display: flex
+		justify-content: center
+.burger__menu>.main-wrapper
+	box-shadow: none
+	background-color: $color-blue
 .burger
 	&__header
 		padding: 2rem
@@ -20,13 +30,6 @@
 		transform: translateY(-200%)
 		opacity: 0.5
 		z-index: 100
-		&>.header__logo
-			display: flex
-			justify-self: center
-			&-wrapper
-				width: 100%
-				display: flex
-				justify-content: center
 		&.opened
 			opacity: 1
 			transform: translateY(0)
