@@ -12,8 +12,72 @@ const $bookingModal = document.querySelector('.ice__booking-wrapper')
 const $connectModal = document.querySelector('.connect__us-wrapper')
 const $popupButtons = document.querySelectorAll('[data-modal]')
 const $closeModalButtons = document.querySelectorAll('.form__close')
-
+const $forms = document.querySelectorAll('.form__body')
 const $modals = [$bookingModal, $connectModal]
+
+$body.addEventListener('keydown', (e) => {
+	let activeModal = document.querySelector('.opened-modal')
+	let modalForm = ''
+	activeModal ? (modalForm = activeModal.querySelector('.form__body')) : modalForm
+
+	if (e.keyCode === 27 && modalForm) {
+		activeModal.classList.remove('opened-modal')
+	}
+})
+$forms.forEach((form) => {
+	form.addEventListener('submit', formSend)
+
+	async function formSend(e) {
+		e.preventDefault()
+		let error = await formValidate(form)
+		let formData = new FormData(form)
+
+		if (error === 0) {
+			form.reset()
+			let date = form.querySelector('.form__date')
+			if (date) {
+				date.focus()
+				date.blur()
+			}
+			form.parentElement.classList.remove('opened-modal')
+			setTimeout(() => {
+				window.location.href = `thanks.html`
+			}, 500)
+		}
+	}
+	async function formValidate(form) {
+		let error = 0
+		let formReqs = form.querySelectorAll('._req')
+		for (const input of formReqs) {
+			formRemoveError(input)
+
+			if (input.classList.contains('_email')) {
+				if (!emailTest(input)) {
+					formAddError(input)
+					error++
+				}
+			} else {
+				if (input.value === '') {
+					formAddError(input)
+					error++
+				}
+			}
+		}
+		return error
+	}
+
+	function formAddError(input) {
+		input.classList.add('_error')
+		input.parentElement.classList.add('_error')
+	}
+	function formRemoveError(input) {
+		input.classList.remove('_error')
+		input.parentElement.classList.remove('_error')
+	}
+	function emailTest(input) {
+		return /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/.test(input.value)
+	}
+})
 
 $modals.forEach((modal) => {
 	modal.addEventListener('click', (e) => {
@@ -27,16 +91,6 @@ $modals.forEach((modal) => {
 		}
 	})
 })
-// $closeModalButtons.forEach((btn) => {
-// 	btn.addEventListener('click', (e) => {
-// 		e.preventDefault()
-// 		if (!e.target.closest('.form')) {
-// 			console.log('ЗАКРЫТЬ ААААААААААААААААААА')
-// 		}
-// 		$bookingModal.classList.remove('opened-modal')
-// 		$connectModal.classList.remove('opened-modal')
-// 	})
-// })
 
 $popupButtons.forEach((btn) => {
 	btn.addEventListener('click', (e) => {

@@ -67,6 +67,10 @@
 		&:focus
 			outline: none
 			background: rgba($color-blue, 0.15)
+	&__input._error
+		box-shadow: 0px -30px 27px -26px $color-red inset
+		&:focus
+			background-color: lighten($color-red, 50)
 	&__agreement
 		@include font('IBM Plex Sans', 0.6rem, 400)
 		@include adaptiveProp('font-size', 12,10,1920,319)

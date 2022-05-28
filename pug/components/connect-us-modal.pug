@@ -4,10 +4,10 @@
 		h2.form__title.title-48 Связаться с нами
 		.form__inputs
 			.form__item
-				input(type="text" name='name' placeholder='Имя').text.form__input#formName
+				input#formName(type="text" name='name' placeholder='Имя')._req.text.form__input
 			.form__item
-				input(type="text" name='email' placeholder='E-mail').text.form__input#formEmail
+				input#formEmail(type="text" name='email' placeholder='E-mail')._req._email.text.form__input
 		.form__item
-			textarea(name="message" placeholder='Сообщение').text.form__input#formMessage
+			textarea#formMessage(name="message" placeholder='Сообщение')._req.text.form__input
 		p.form__agreement Нажимая на кнопку, вы даете согласие на обработку персональных данных и соглашаетесь c политикой конфиденциальности.
 		button.button.form__button(type='submit') Отправить
