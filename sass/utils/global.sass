@@ -55,8 +55,7 @@ a
 	@include adaptiveProp('padding-right',110,20,1024,319)
 
 .title
-	@include font('Druk Cyr', 4.8rem, 500)
-	font-style: italic
+	@include font('Druk Cyr', 4.8rem, 500, italic)
 	line-height: 1.27em
 	letter-spacing: .177em
 	text-transform: uppercase
@@ -67,10 +66,9 @@ a
 		letter-spacing: 0.1em
 
 .title-48
-	@include font('Druk Cyr', 2.4rem, 500)
+	@include font('Druk Cyr', 2.4rem, 500, italic)
 	@include adaptiveProp('font-size', 48, 32, 1920, 1024)
 	@include adaptiveProp('font-size', 32, 24, 1024, 319)
-	font-style: italic
 	line-height: 1.27em
 	letter-spacing: 0.0625em
 	text-transform: uppercase
@@ -109,20 +107,17 @@ a
 
 .title-small,
 .subtitle-small
-	font-style: italic
 	text-transform: uppercase
 
 .title-small
-	@include font('Druk Cyr', 2.8rem, 500)
-	font-style: italic
+	@include font('Druk Cyr', 2.8rem, 500, italic)
 	line-height: 1.25em
 	letter-spacing: 0.142em
 	@include adaptiveProp('font-size', 56, 42, 1920, 1024)
 	@include adaptiveProp('font-size', 42, 36, 1024, 319)
 
 .subtitle-small
-	@include font('Druk Cyr', 1.6rem, 500)
-	font-style: italic
+	@include font('Druk Cyr', 1.6rem, 500, italic)
 	line-height: 1.75em
 	letter-spacing: 0.125em
 	@include adaptiveProp('font-size', 32, 22, 1920, 1024)
